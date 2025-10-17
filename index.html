@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Sudoku">
+    <meta name="theme-color" content="#667eea">
+    <title>Sudoku Game</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sudoku</h1>
+
+        <div class="game-info">
+            <div class="difficulty-selector">
+                <label>Difficulty:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="hard">Hard</option>
+                    <option value="expert">Expert</option>
+                    <option value="joking">You Must Be Joking</option>
+                </select>
+            </div>
+            <div class="theme-selector">
+                <label>Theme:</label>
+                <select id="theme">
+                    <option value="default">Classic</option>
+                    <option value="vaporwave">Vaporwave</option>
+                    <option value="dark">Dark Mode</option>
+                    <option value="forest">Forest</option>
+                </select>
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">Wins:</span>
+                    <span id="wins" class="stat-value">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Losses:</span>
+                    <span id="losses" class="stat-value">0</span>
+                </div>
+                <button id="reset-stats" class="reset-stats-btn">Reset Stats</button>
+            </div>
+            <div class="timer">
+                Time: <span id="timer">00:00</span>
+            </div>
+        </div>
+
+        <div class="game-container">
+            <div id="number-tracker" class="number-tracker"></div>
+            <div id="sudoku-board" class="sudoku-board"></div>
+        </div>
+
+        <div class="controls">
+            <button id="new-game" class="btn btn-primary">New Game</button>
+            <button id="check-solution" class="btn btn-secondary">Check Solution</button>
+            <button id="hint" class="btn btn-secondary">Hint</button>
+            <button id="reset" class="btn btn-secondary">Reset</button>
+            <button id="toggle-notes" class="btn btn-secondary">Notes: OFF</button>
+            <button id="toggle-errors" class="btn btn-secondary">Mistakes: ON</button>
+            <button id="toggle-numbers" class="btn btn-secondary">1 2 3</button>
+        </div>
+
+        <div id="message" class="message"></div>
+    </div>
+
+    <div id="celebration-overlay" class="celebration-overlay hidden">
+        <div class="celebration-content">
+            <div class="celebration-emoji">🎉</div>
+            <h2 class="celebration-title">Congratulations!</h2>
+            <p class="celebration-message">You solved the puzzle!</p>
+            <p class="celebration-time">Time: <span id="final-time">00:00</span></p>
+        </div>
+    </div>
+
+    <script src="sudoku.js"></script>
+    <script>
+        // Register service worker for offline functionality
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./service-worker.js')
+                .then(reg => console.log('Service Worker registered'))
+                .catch(err => console.log('Service Worker registration failed'));
+        }
+    </script>
+</body>
+</html>
