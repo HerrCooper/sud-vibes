@@ -1,7 +1,7 @@
 {
-  "name": "Sudoku Game",
-  "short_name": "Sudoku",
-  "description": "A beautiful sudoku game with multiple themes and number systems",
+  "name": "Big Game's Big Sudoku Bonanza",
+  "short_name": "Big Sudoku",
+  "description": "Big Game's Big Sudoku Bonanza - A beautiful sudoku game with multiple themes and number systems",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#667eea",
