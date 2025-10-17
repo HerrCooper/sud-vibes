@@ -343,8 +343,46 @@ h1 {
     border: 2px solid #bee5eb;
 }
 
-/* Responsive design */
+/* Mobile Number Pad */
+.mobile-numpad {
+    display: none;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin: 20px auto;
+    max-width: 500px;
+    padding: 0 20px;
+}
+
+.numpad-btn {
+    padding: 15px;
+    font-size: 1.5em;
+    font-weight: 700;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.numpad-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(102, 126, 234, 0.3);
+}
+
+.numpad-delete {
+    grid-column: span 2;
+    background: #ef4444;
+}
+
+/* Show numpad on mobile devices */
 @media (max-width: 900px) {
+    .mobile-numpad {
+        display: grid;
+    }
+
     .game-container {
         flex-direction: column;
     }

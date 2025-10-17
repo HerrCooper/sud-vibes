@@ -48,6 +48,14 @@ class SudokuGame {
         document.getElementById('reset-stats').addEventListener('click', () => this.resetStats());
         document.getElementById('celebration-overlay').addEventListener('click', () => this.hideCelebration());
 
+        // Mobile numpad event listeners
+        document.querySelectorAll('.numpad-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const num = e.target.dataset.num;
+                this.handleMobileInput(num);
+            });
+        });
+
         document.addEventListener('keydown', (e) => this.handleKeyPress(e));
     }
 
@@ -108,6 +116,14 @@ class SudokuGame {
                 } else {
                     numberItem.classList.remove('completed');
                 }
+            }
+        }
+
+        // Update mobile numpad display
+        for (let num = 1; num <= 9; num++) {
+            const numpadBtn = document.querySelector(`.numpad-btn[data-num="${num}"]`);
+            if (numpadBtn) {
+                numpadBtn.textContent = this.numberMaps[this.numberSystem][num];
             }
         }
     }
@@ -375,6 +391,49 @@ class SudokuGame {
             if (newCol > 8) newCol = 0;
 
             this.selectCell(newRow, newCol);
+        }
+    }
+
+    handleMobileInput(input) {
+        if (!this.selectedCell) {
+            this.showMessage('Please select a cell first', 'info');
+            return;
+        }
+
+        const { row, col } = this.selectedCell;
+
+        // Can't edit initial cells
+        if (this.initialBoard[row][col] !== 0) {
+            return;
+        }
+
+        if (input === 'delete') {
+            // Delete key
+            this.board[row][col] = 0;
+            this.notes[row][col].clear();
+            this.renderBoard();
+            this.selectCell(row, col);
+        } else {
+            // Number input
+            const num = parseInt(input);
+
+            // Use note mode to toggle notes
+            if (this.noteMode) {
+                // Toggle note
+                if (this.notes[row][col].has(num)) {
+                    this.notes[row][col].delete(num);
+                } else {
+                    this.notes[row][col].add(num);
+                }
+            } else {
+                // Set value and clear notes
+                this.board[row][col] = num;
+                this.notes[row][col].clear();
+                this.checkCell(row, col);
+            }
+
+            this.renderBoard();
+            this.selectCell(row, col);
         }
     }
 
