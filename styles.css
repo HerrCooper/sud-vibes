@@ -633,6 +633,21 @@ body.theme-vaporwave .message {
     backdrop-filter: blur(10px);
 }
 
+body.theme-vaporwave .numpad-btn {
+    background: linear-gradient(135deg, #ff71ce 0%, #01cdfe 100%);
+    border: 2px solid #05ffa1;
+    box-shadow: 0 0 20px rgba(5, 255, 161, 0.4);
+}
+
+body.theme-vaporwave .numpad-btn:active {
+    box-shadow: 0 0 10px rgba(5, 255, 161, 0.6);
+}
+
+body.theme-vaporwave .numpad-delete {
+    background: #ff006e;
+    border-color: #ff71ce;
+}
+
 /* Dark Mode Theme */
 body.theme-dark {
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
@@ -720,6 +735,19 @@ body.theme-dark .btn:hover {
 body.theme-dark .message {
     background: #16213e;
     color: #eee;
+}
+
+body.theme-dark .numpad-btn {
+    background: linear-gradient(135deg, #e94560 0%, #00adb5 100%);
+    box-shadow: 0 4px 8px rgba(233, 69, 96, 0.3);
+}
+
+body.theme-dark .numpad-btn:active {
+    box-shadow: 0 2px 4px rgba(233, 69, 96, 0.3);
+}
+
+body.theme-dark .numpad-delete {
+    background: #e94560;
 }
 
 /* Forest Theme */
@@ -829,6 +857,19 @@ body.theme-forest .message.info {
     background: #dbeafe;
     color: #1e3a8a;
     border-color: #60a5fa;
+}
+
+body.theme-forest .numpad-btn {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    box-shadow: 0 4px 8px rgba(5, 150, 105, 0.3);
+}
+
+body.theme-forest .numpad-btn:active {
+    box-shadow: 0 2px 4px rgba(5, 150, 105, 0.3);
+}
+
+body.theme-forest .numpad-delete {
+    background: #dc2626;
 }
 
 /* Cat Theme */
@@ -957,6 +998,19 @@ body.theme-cat .message {
     background: #fef3c7;
     color: #92400e;
     border-color: #f59e0b;
+}
+
+body.theme-cat .numpad-btn {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    box-shadow: 0 4px 8px rgba(245, 158, 11, 0.3);
+}
+
+body.theme-cat .numpad-btn:active {
+    box-shadow: 0 2px 4px rgba(245, 158, 11, 0.3);
+}
+
+body.theme-cat .numpad-delete {
+    background: #dc2626;
 }
 
 /* Jellybean Theme */
@@ -1122,6 +1176,19 @@ body.theme-jellybean .message {
     border-color: #ec4899;
 }
 
+body.theme-jellybean .numpad-btn {
+    background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+    box-shadow: 0 4px 8px rgba(236, 72, 153, 0.3);
+}
+
+body.theme-jellybean .numpad-btn:active {
+    box-shadow: 0 2px 4px rgba(236, 72, 153, 0.3);
+}
+
+body.theme-jellybean .numpad-delete {
+    background: #dc2626;
+}
+
 /* Big Game's Theme (Old English Sign Style) */
 body.theme-biggame {
     background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
@@ -1282,6 +1349,23 @@ body.theme-biggame .message {
     font-weight: 600;
 }
 
+body.theme-biggame .numpad-btn {
+    background: linear-gradient(135deg, #92400e 0%, #78350f 100%);
+    border: 2px solid #78350f;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-weight: 700;
+    box-shadow: 0 4px 8px rgba(146, 64, 14, 0.3);
+}
+
+body.theme-biggame .numpad-btn:active {
+    box-shadow: 0 2px 4px rgba(146, 64, 14, 0.3);
+}
+
+body.theme-biggame .numpad-delete {
+    background: #7f1d1d;
+    border-color: #991b1b;
+}
+
 /* Peak Design Theme (Minimalist charcoal/slate aesthetic) */
 body.theme-peakdesign {
     background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
@@ -1401,6 +1485,19 @@ body.theme-peakdesign .message {
     background: #f1f5f9;
     color: #1e293b;
     border-color: #cbd5e1;
+}
+
+body.theme-peakdesign .numpad-btn {
+    background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+    box-shadow: 0 4px 8px rgba(15, 23, 42, 0.3);
+}
+
+body.theme-peakdesign .numpad-btn:active {
+    box-shadow: 0 2px 4px rgba(15, 23, 42, 0.3);
+}
+
+body.theme-peakdesign .numpad-delete {
+    background: #dc2626;
 }
 
 /* Captain America Theme */
@@ -1532,4 +1629,18 @@ body.theme-captainamerica .message {
     color: #1e3a8a;
     border: 3px solid #1e40af;
     font-weight: 600;
+}
+
+body.theme-captainamerica .numpad-btn {
+    background: linear-gradient(135deg, #1e40af 0%, #dc2626 100%);
+    font-weight: 700;
+    box-shadow: 0 4px 8px rgba(30, 64, 175, 0.3);
+}
+
+body.theme-captainamerica .numpad-btn:active {
+    box-shadow: 0 2px 4px rgba(30, 64, 175, 0.3);
+}
+
+body.theme-captainamerica .numpad-delete {
+    background: #7f1d1d;
 }
